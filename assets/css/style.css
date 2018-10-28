@@ -1,0 +1,13 @@
+h1, p {
+    text-align:center;
+}
+
+#favoritesArea {
+    border-left: solid black 1px;
+}
+
+.topicButton {
+    margin: 5px 0px 5px 0px;
+    max-width: 100%;
+    display: block;
+}
