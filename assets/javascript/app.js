@@ -4,9 +4,9 @@ window.onload = function () {
 
     // Click event listener for the search button, calls the populateGifs function and adds a new topic button from the search bar...
     $("#button-addon2").on("click", function() {
-        populateGifs($("#searchBar").val());
+        populateGifs($("#searchBar").val().trim());
         var topicBtn = $("<button>");
-        var btnTitle = $("#searchBar").val();
+        var btnTitle = $("#searchBar").val().trim();
         topicBtn.text(btnTitle);
         topicBtn.attr("class","btn topicButton");
         topicBtn.attr("id",btnTitle);
@@ -21,8 +21,8 @@ window.onload = function () {
     // Function to populate gifs when a search is executed or a topic button is clicked...
     // Giphy API...
     var populateGifs = function(search) {
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=dc6zaTOxFJmzC&limit=10";
-        console.log(search);
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=dc6zaTOxFJmzC&limit=10";
+
         $.ajax({
         url: queryURL,
         method: "GET"
